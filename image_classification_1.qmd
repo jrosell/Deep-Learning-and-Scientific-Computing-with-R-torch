@@ -449,7 +449,7 @@ With two hundred options to choose from, "every fourth" does not even seem so ba
 Before we end, though, let's see how we would use `luz` to obtain predictions:
 
 ```{r}
-preds <- last %>% predict(valid_dl)
+preds <- fitted %>% predict(valid_dl)
 ```
 
 `predict()` directly returns what is output by the model: two hundred non-normalized scores for each item. That's because the model's last layer is a linear module, with no activation applied. (Remember how the loss function, `nn_cross_entropy_loss()`, applies a *softmax* operation before calculating cross-entropy.)
